@@ -1,0 +1,19 @@
+program posdesignDelphi;
+
+uses
+  System.StartUpCopy,
+  FMX.Forms,
+  posdesignDelphi.view.index in 'src\view\posdesignDelphi.view.index.pas' {Form1},
+  posdesignDelphi.view.source.routes in 'src\view\source\posdesignDelphi.view.source.routes.pas',
+  posdesignDelphi.view.pages.app in 'src\view\pages\posdesignDelphi.view.pages.app.pas' {PageApp},
+  posdesignDelphi.view.components.navbar in 'src\view\components\navbar\posdesignDelphi.view.components.navbar.pas' {NavBar};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.CreateForm(TForm1, Form1);
+  Application.CreateForm(TPageApp, PageApp);
+  Application.CreateForm(TNavBar, NavBar);
+  Application.Run;
+end.

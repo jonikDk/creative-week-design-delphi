@@ -1,0 +1,50 @@
+unit posdesignDelphi.view.pages.app;
+
+interface
+
+uses
+  System.SysUtils,
+  System.Types,
+  System.UITypes,
+  System.Classes,
+  System.Variants,
+  FMX.Types,
+  FMX.Controls,
+  FMX.Forms,
+  FMX.Graphics,
+  FMX.Dialogs,
+  FMX.Layouts,
+  posdesignDelphi.view.components.navbar,
+  Router4D.Interfaces;
+
+type
+  TPageApp = class(TForm, iRouter4DComponent)
+    LayoutContainer: TLayout;
+    LayoutNavBar: TLayout;
+    LayoutBody: TLayout;
+  private
+    function Render: TFMXObject;
+    procedure UnRender;
+  public
+
+  end;
+
+var
+  PageApp: TPageApp;
+
+implementation
+
+{$R *.fmx}
+
+function TPageApp.Render: TFMXObject;
+begin
+  Result := LayoutContainer;
+  LayoutNavBar.AddObject(TComponentsNavBar.Create(Self).Build);
+end;
+
+procedure TPageApp.UnRender;
+begin
+
+end;
+
+end.
