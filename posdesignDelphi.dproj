@@ -141,6 +141,27 @@
             <Form>ComponentsNavBar</Form>
             <FormType>fmx</FormType>
         </DCCReference>
+        <DCCReference Include="src\view\source\posdesignDelphi.view.source.utils.pas"/>
+        <DCCReference Include="src\view\components\button\posdesignDelphi.view.components.button.pas">
+            <Form>ComponentButton</Form>
+            <FormType>fmx</FormType>
+        </DCCReference>
+        <RcItem Include="src\assets\menu.png">
+            <ResourceType>RCDATA</ResourceType>
+            <ResourceId>img_menu</ResourceId>
+        </RcItem>
+        <RcItem Include="src\assets\papel.png">
+            <ResourceType>RCDATA</ResourceType>
+            <ResourceId>img_papel</ResourceId>
+        </RcItem>
+        <RcItem Include="src\assets\iluminacao.png">
+            <ResourceType>RCDATA</ResourceType>
+            <ResourceId>img_iluminacao</ResourceId>
+        </RcItem>
+        <RcItem Include="src\assets\loja.png">
+            <ResourceType>RCDATA</ResourceType>
+            <ResourceId>img_loja</ResourceId>
+        </RcItem>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>
@@ -168,6 +189,30 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
+                <DeployFile LocalName="Win32\Debug\posdesignDelphi.exe" Configuration="Debug" Class="ProjectOutput">
+                    <Platform Name="Win32">
+                        <RemoteName>posdesignDelphi.exe</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="src\assets\papel.png" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="src\assets\menu.png" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="src\assets\iluminacao.png" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployFile LocalName="$(BDS)\Redist\iossimulator\libcgunwind.1.0.dylib" Class="DependencyModule">
                     <Platform Name="iOSSimulator">
                         <Overwrite>true</Overwrite>
@@ -178,9 +223,9 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="Win32\Debug\posdesignDelphi.exe" Configuration="Debug" Class="ProjectOutput">
+                <DeployFile LocalName="src\assets\loja.png" Configuration="Debug" Class="ProjectFile">
                     <Platform Name="Win32">
-                        <RemoteName>posdesignDelphi.exe</RemoteName>
+                        <RemoteDir>.\</RemoteDir>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>

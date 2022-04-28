@@ -7,6 +7,7 @@ object ComponentsNavBar: TComponentsNavBar
   FormFactor.Width = 320
   FormFactor.Height = 480
   FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
   DesignerMasterStyle = 0
   object LayoutContainer: TLayout
     Align = Client
@@ -21,6 +22,36 @@ object ComponentsNavBar: TComponentsNavBar
       Size.Height = 72.000000000000000000
       Size.PlatformDefault = False
       Stroke.Kind = None
+      object ShadowEffect1: TShadowEffect
+        Distance = 3.000000000000000000
+        Direction = 45.000000000000000000
+        Softness = 0.300000011920929000
+        Opacity = 0.400000005960464500
+        ShadowColor = claBlack
+      end
+      object Layout1: TLayout
+        Align = Left
+        Size.Width = 65.000000000000000000
+        Size.Height = 72.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 2
+      end
+      object Layout2: TLayout
+        Align = Right
+        Position.X = 720.000000000000000000
+        Size.Width = 128.000000000000000000
+        Size.Height = 72.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+      end
+      object Layout3: TLayout
+        Align = Right
+        Position.X = 504.000000000000000000
+        Size.Width = 216.000000000000000000
+        Size.Height = 72.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+      end
     end
   end
 end

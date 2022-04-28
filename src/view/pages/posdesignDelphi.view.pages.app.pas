@@ -15,13 +15,14 @@ uses
   FMX.Dialogs,
   FMX.Layouts,
   posdesignDelphi.view.components.navbar,
-  Router4D.Interfaces;
+  Router4D.Interfaces, FMX.Objects;
 
 type
   TPageApp = class(TForm, iRouter4DComponent)
     LayoutContainer: TLayout;
     LayoutNavBar: TLayout;
     LayoutBody: TLayout;
+    Rectangle1: TRectangle;
   private
 
   public

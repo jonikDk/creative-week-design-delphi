@@ -1,0 +1,75 @@
+unit posdesignDelphi.view.components.button;
+
+interface
+
+uses
+  System.SysUtils,
+  System.Types,
+  System.UITypes,
+  System.Classes,
+  System.Variants,
+  FMX.Types,
+  FMX.Controls,
+  FMX.Forms,
+  FMX.Graphics,
+  FMX.Dialogs,
+  FMX.Layouts,
+  FMX.Controls.Presentation,
+  FMX.StdCtrls,
+  FMX.Objects;
+
+type
+  TComponentButton = class(TForm)
+    LayoutContainer: TLayout;
+    Image1: TImage;
+    SpeedButton1: TSpeedButton;
+    procedure FormCreate(Sender: TObject);
+    procedure SpeedButton1Click(Sender: TObject);
+  private
+    { Private declarations }
+    FClick: TProc<TObject>;
+  public
+    { Public declarations }
+    function Build: TFMXObject;
+    function Image(Value: string): TComponentButton;
+    function Click(Value: TProc<TObject>): TComponentButton;
+  end;
+
+var
+  ComponentButton: TComponentButton;
+
+implementation
+
+uses
+  posdesignDelphi.view.source.utils;
+
+{$R *.fmx}
+
+function TComponentButton.Build: TFMXObject;
+begin
+  Result := LayoutContainer;
+end;
+
+function TComponentButton.Click(Value: TProc<TObject>): TComponentButton;
+begin
+  Result := Self;
+  FClick := Value;
+end;
+
+procedure TComponentButton.FormCreate(Sender: TObject);
+begin
+  //
+end;
+
+function TComponentButton.Image(Value: string): TComponentButton;
+begin
+  Result := Self;
+  TUtils.ResourceImage(Value, Image1);
+end;
+
+procedure TComponentButton.SpeedButton1Click(Sender: TObject);
+begin
+  FClick;
+end;
+
+end.
