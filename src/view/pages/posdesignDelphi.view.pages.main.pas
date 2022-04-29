@@ -20,7 +20,9 @@ uses
   FMX.StdCtrls,
   FMX.Effects,
   posdesignDelphi.view.source.utils,
-  FMX.Edit;
+  FMX.Edit,
+  posdesignDelphi.view.components.itemcard,
+  posdesignDelphi.view.components.itemcategory;
 
 type
   TPageMain = class(TForm, iRouter4DComponent)
@@ -67,11 +69,28 @@ type
     SpeedButton5: TSpeedButton;
     RoundRect1: TRoundRect;
     Edit1: TEdit;
+    Layout16: TLayout;
+    Layout17: TLayout;
+    Layout18: TLayout;
+    Label9: TLabel;
+    Label10: TLabel;
+    Label11: TLabel;
+    Label12: TLabel;
+    Label13: TLabel;
+    Label14: TLabel;
+    Layout19: TLayout;
+    Edit2: TEdit;
+    VertScrollBox1: TVertScrollBox;
+    FlowLayout1: TFlowLayout;
+    FlowLayout2: TFlowLayout;
+    HorzScrollBox1: THorzScrollBox;
     procedure SpeedButton1Click(Sender: TObject);
     procedure SpeedButton5Click(Sender: TObject);
     procedure Edit1Click(Sender: TObject);
   private
     { Private declarations }
+    procedure LoadCards;
+    procedure LoadCategory;
   public
     function Render: TFMXObject;
     procedure UnRender;
@@ -85,10 +104,29 @@ implementation
 {$R *.fmx}
 { TPageMain }
 
+procedure TPageMain.LoadCards;
+var
+  I: Integer;
+begin
+  for I := 1 to 12 do
+  begin
+    FlowLayout1.AddObject(TComponentCard.Create(Self).Resources('bebida' + I.ToString, 'Café', 'R$3,35').Build);
+  end;
+end;
+
+procedure TPageMain.LoadCategory;
+begin
+  FlowLayout2.AddObject(TComponentCategory.Create(Self).Resources('img_coffee', 'Café').Build);
+  FlowLayout2.AddObject(TComponentCategory.Create(Self).Resources('img_drink', 'Bebidas').Build);
+  FlowLayout2.AddObject(TComponentCategory.Create(Self).Resources('img_bbq', 'BBQ').Build);
+  FlowLayout2.AddObject(TComponentCategory.Create(Self).Resources('img_food', 'Comida').Build);
+  FlowLayout2.AddObject(TComponentCategory.Create(Self).Resources('img_desert', 'Doces').Build);
+end;
+
 procedure TPageMain.Edit1Click(Sender: TObject);
 begin
   Edit1.Text := '';
-  Edit1.TextSettings.FontColor := $FFacb0af;
+  Edit1.TextSettings.FontColor := $FFACB0AF;
 end;
 
 function TPageMain.Render: TFMXObject;
@@ -96,6 +134,9 @@ begin
   Result := LayoutContainer;
 
   TUtils.ResourceImage('img_procurar', Image1);
+
+  LoadCards;
+  LoadCategory;
 end;
 
 procedure TPageMain.SpeedButton1Click(Sender: TObject);
