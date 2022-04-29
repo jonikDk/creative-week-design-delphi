@@ -4,7 +4,8 @@ interface
 
 uses
   Router4D,
-  posdesignDelphi.view.pages.app;
+  posdesignDelphi.view.pages.app,
+  posdesignDelphi.view.pages.main;
 
 type
   TRouters = class
@@ -23,7 +24,10 @@ implementation
 
 constructor TRouters.Create;
 begin
-  TRouter4D.Switch.Router('App', TPageApp);
+  TRouter4D
+    .Switch
+      .Router('App', TPageApp)
+      .Router('Main', TPageMain);
 end;
 
 destructor TRouters.Destroy;

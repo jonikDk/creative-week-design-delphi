@@ -2,8 +2,9 @@ object PageIndex: TPageIndex
   Left = 0
   Top = 0
   Caption = 'P'#225'gina Index'
-  ClientHeight = 654
-  ClientWidth = 858
+  ClientHeight = 825
+  ClientWidth = 1200
+  Position = ScreenCenter
   FormFactor.Width = 320
   FormFactor.Height = 480
   FormFactor.Devices = [Desktop]
@@ -11,8 +12,8 @@ object PageIndex: TPageIndex
   DesignerMasterStyle = 0
   object LayoutContainer: TLayout
     Align = Client
-    Size.Width = 858.000000000000000000
-    Size.Height = 654.000000000000000000
+    Size.Width = 1200.000000000000000000
+    Size.Height = 825.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 1
   end

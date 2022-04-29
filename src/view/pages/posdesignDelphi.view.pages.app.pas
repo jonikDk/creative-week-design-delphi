@@ -15,7 +15,10 @@ uses
   FMX.Dialogs,
   FMX.Layouts,
   posdesignDelphi.view.components.navbar,
-  Router4D.Interfaces, FMX.Objects;
+  posdesignDelphi.view.pages.main,
+  Router4D.Interfaces,
+  FMX.Objects,
+  Router4D;
 
 type
   TPageApp = class(TForm, iRouter4DComponent)
@@ -40,7 +43,10 @@ implementation
 function TPageApp.Render: TFMXObject;
 begin
   Result := LayoutContainer;
+
   LayoutNavBar.AddObject(TComponentsNavBar.Create(Self).Build);
+
+  TRouter4D.Render<TPageMain>.SetElement(LayoutBody, LayoutBody);
 end;
 
 procedure TPageApp.UnRender;

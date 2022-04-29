@@ -146,6 +146,10 @@
             <Form>ComponentButton</Form>
             <FormType>fmx</FormType>
         </DCCReference>
+        <DCCReference Include="src\view\pages\posdesignDelphi.view.pages.main.pas">
+            <Form>PageMain</Form>
+            <FormType>fmx</FormType>
+        </DCCReference>
         <RcItem Include="src\assets\menu.png">
             <ResourceType>RCDATA</ResourceType>
             <ResourceId>img_menu</ResourceId>
@@ -161,6 +165,10 @@
         <RcItem Include="src\assets\loja.png">
             <ResourceType>RCDATA</ResourceType>
             <ResourceId>img_loja</ResourceId>
+        </RcItem>
+        <RcItem Include="src\assets\procurar.png">
+            <ResourceType>RCDATA</ResourceType>
+            <ResourceId>img_procurar</ResourceId>
         </RcItem>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
@@ -202,6 +210,12 @@
                     </Platform>
                 </DeployFile>
                 <DeployFile LocalName="src\assets\menu.png" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="src\assets\procurar.png" Configuration="Debug" Class="ProjectFile">
                     <Platform Name="Win32">
                         <RemoteDir>.\</RemoteDir>
                         <Overwrite>true</Overwrite>
