@@ -158,6 +158,11 @@
             <Form>ComponentCategory</Form>
             <FormType>fmx</FormType>
         </DCCReference>
+        <DCCReference Include="src\view\components\itemlist\posdesignDelphi.view.components.itemlist.pas">
+            <Form>ComponentItemList</Form>
+            <FormType>fmx</FormType>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
         <RcItem Include="src\assets\menu.png">
             <ResourceType>RCDATA</ResourceType>
             <ResourceId>img_menu</ResourceId>
@@ -246,6 +251,30 @@
             <ResourceType>RCDATA</ResourceType>
             <ResourceId>img_food</ResourceId>
         </RcItem>
+        <RcItem Include="src\img\bebida_alpino3.jpg">
+            <ResourceType>RCDATA</ResourceType>
+            <ResourceId>bebida13</ResourceId>
+        </RcItem>
+        <RcItem Include="src\img\bebida_nescau3.jpg">
+            <ResourceType>RCDATA</ResourceType>
+            <ResourceId>bebida14</ResourceId>
+        </RcItem>
+        <RcItem Include="src\img\bebida_neston3.jpg">
+            <ResourceType>RCDATA</ResourceType>
+            <ResourceId>bebida15</ResourceId>
+        </RcItem>
+        <RcItem Include="src\img\bebida_ninho3.jpg">
+            <ResourceType>RCDATA</ResourceType>
+            <ResourceId>bebida16</ResourceId>
+        </RcItem>
+        <RcItem Include="src\img\bebida_pirakids3.jpg">
+            <ResourceType>RCDATA</ResourceType>
+            <ResourceId>bebida17</ResourceId>
+        </RcItem>
+        <RcItem Include="src\img\bebida_todynho3.jpg">
+            <ResourceType>RCDATA</ResourceType>
+            <ResourceId>bebida18</ResourceId>
+        </RcItem>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>
@@ -280,7 +309,19 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
+                <DeployFile LocalName="src\img\bebida_todynho3.jpg" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployFile LocalName="src\img\bbq.png" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="src\img\bebida_alpino3.jpg" Configuration="Debug" Class="ProjectFile">
                     <Platform Name="Win32">
                         <RemoteDir>.\</RemoteDir>
                         <Overwrite>true</Overwrite>
@@ -328,6 +369,12 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
+                <DeployFile LocalName="src\img\bebida_neston3.jpg" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployFile LocalName="src\img\bebida_todynho.jpg" Configuration="Debug" Class="ProjectFile">
                     <Platform Name="Win32">
                         <RemoteDir>.\</RemoteDir>
@@ -347,6 +394,12 @@
                     </Platform>
                 </DeployFile>
                 <DeployFile LocalName="src\img\bebida_nescau2.jpg" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="src\img\bebida_pirakids3.jpg" Configuration="Debug" Class="ProjectFile">
                     <Platform Name="Win32">
                         <RemoteDir>.\</RemoteDir>
                         <Overwrite>true</Overwrite>
@@ -385,6 +438,12 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
+                <DeployFile LocalName="src\img\bebida_ninho3.jpg" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployFile LocalName="src\assets\procurar.png" Configuration="Debug" Class="ProjectFile">
                     <Platform Name="Win32">
                         <RemoteDir>.\</RemoteDir>
@@ -410,6 +469,12 @@
                     </Platform>
                 </DeployFile>
                 <DeployFile LocalName="src\img\desert.png" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="src\img\bebida_nescau3.jpg" Configuration="Debug" Class="ProjectFile">
                     <Platform Name="Win32">
                         <RemoteDir>.\</RemoteDir>
                         <Overwrite>true</Overwrite>

@@ -13,7 +13,8 @@ uses
   posdesignDelphi.view.components.button in 'src\view\components\button\posdesignDelphi.view.components.button.pas' {ComponentButton},
   posdesignDelphi.view.pages.main in 'src\view\pages\posdesignDelphi.view.pages.main.pas' {PageMain},
   posdesignDelphi.view.components.itemcard in 'src\view\components\itemcard\posdesignDelphi.view.components.itemcard.pas' {ComponentCard},
-  posdesignDelphi.view.components.itemcategory in 'src\view\components\itemcategory\posdesignDelphi.view.components.itemcategory.pas' {ComponentCategory};
+  posdesignDelphi.view.components.itemcategory in 'src\view\components\itemcategory\posdesignDelphi.view.components.itemcategory.pas' {ComponentCategory},
+  posdesignDelphi.view.components.itemlist in 'src\view\components\itemlist\posdesignDelphi.view.components.itemlist.pas' {ComponentItemList: TFrame};
 
 {$R *.res}
 

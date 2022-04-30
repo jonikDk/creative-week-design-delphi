@@ -93,11 +93,12 @@ object PageMain: TPageMain
           Size.Height = 80.000000000000000000
           Size.PlatformDefault = False
           TabOrder = 0
+          ShowScrollBars = False
           Viewport.Width = 905.000000000000000000
           Viewport.Height = 80.000000000000000000
           object FlowLayout2: TFlowLayout
-            Align = Client
-            Size.Width = 905.000000000000000000
+            Align = Left
+            Size.Width = 897.000000000000000000
             Size.Height = 80.000000000000000000
             Size.PlatformDefault = False
             TabOrder = 0
@@ -124,13 +125,6 @@ object PageMain: TPageMain
           Size.Height = 500.000000000000000000
           Size.PlatformDefault = False
           Stroke.Kind = None
-          object ShadowEffect1: TShadowEffect
-            Distance = 3.000000000000000000
-            Direction = 45.000000000000000000
-            Softness = 0.300000011920929000
-            Opacity = 0.400000005960464500
-            ShadowColor = claBlack
-          end
           object Layout12: TLayout
             Align = Top
             Padding.Left = 15.000000000000000000
@@ -243,6 +237,7 @@ object PageMain: TPageMain
             Size.Height = 440.000000000000000000
             Size.PlatformDefault = False
             TabOrder = 1
+            ShowScrollBars = False
             Viewport.Width = 900.000000000000000000
             Viewport.Height = 440.000000000000000000
             object FlowLayout1: TFlowLayout
@@ -255,6 +250,13 @@ object PageMain: TPageMain
               JustifyLastLine = Left
               FlowDirection = LeftToRight
             end
+          end
+          object ShadowEffect1: TShadowEffect
+            Distance = 3.000000000000000000
+            Direction = 45.000000000000000000
+            Softness = 0.300000011920929000
+            Opacity = 0.200000002980232200
+            ShadowColor = claBlack
           end
         end
       end
@@ -636,6 +638,16 @@ object PageMain: TPageMain
             Softness = 0.300000011920929000
             Opacity = 0.400000005960464500
             ShadowColor = claBlack
+          end
+          object FramedVertScrollBox1: TFramedVertScrollBox
+            Align = Client
+            Size.Width = 460.000000000000000000
+            Size.Height = 300.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 4
+            ShowScrollBars = False
+            Viewport.Width = 456.000000000000000000
+            Viewport.Height = 296.000000000000000000
           end
         end
       end

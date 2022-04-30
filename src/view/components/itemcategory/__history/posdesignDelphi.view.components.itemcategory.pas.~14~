@@ -1,0 +1,79 @@
+unit posdesignDelphi.view.components.itemcategory;
+
+interface
+
+uses
+  System.SysUtils,
+  System.Types,
+  System.UITypes,
+  System.Classes,
+  System.Variants,
+  FMX.Types,
+  FMX.Controls,
+  FMX.Forms,
+  FMX.Graphics,
+  FMX.Dialogs,
+  FMX.Layouts,
+  FMX.Objects,
+  FMX.Controls.Presentation,
+  FMX.StdCtrls,
+  posdesignDelphi.view.source.utils, FMX.Effects;
+
+type
+  TComponentCategory = class(TForm)
+    LayoutContainer: TLayout;
+    Rectangle1: TRectangle;
+    Layout1: TLayout;
+    Layout2: TLayout;
+    lblDescription: TLabel;
+    Image1: TImage;
+    ShadowEffect1: TShadowEffect;
+  private
+    FClick: TProc<TObject>;
+    procedure Selecionar;
+  public
+    { Public declarations }
+    function Build: TFMXObject;
+    function Resources(Image, Description: string): TComponentCategory;
+    function Click(Value: TProc<TObject>): TComponentCategory;
+  end;
+
+var
+  ComponentCategory: TComponentCategory;
+
+implementation
+
+{$R *.fmx}
+{ TComponentCategory }
+
+function TComponentCategory.Build: TFMXObject;
+begin
+  Result := LayoutContainer;
+end;
+
+function TComponentCategory.Click(Value: TProc<TObject>): TComponentCategory;
+begin
+  Result := Self;
+  Selecionar;
+end;
+
+procedure TComponentCategory.Selecionar;
+begin
+  Rectangle1.Stroke.Kind := TBrushKind.Solid;
+  Rectangle1.Stroke.Color := TAlphaColor(4279148392);
+  Image1.Bitmap.ReplaceOpaqueColor(TAlphaColor(4279148392));
+  lblDescription.TextSettings.FontColor := TAlphaColor(4279148392);
+end;
+
+function TComponentCategory.Resources(Image, Description: string): TComponentCategory;
+begin
+  Result := Self;
+
+  lblDescription.Text := Description;
+
+  TUtils.ResourceImage(Image, Image1);
+
+  Image1.Bitmap.ReplaceOpaqueColor(TAlphaColor($FFB5b5b5));
+end;
+
+end.

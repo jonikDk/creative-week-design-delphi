@@ -27,11 +27,12 @@ type
     Layout2: TLayout;
     lblDescription: TLabel;
     Image1: TImage;
-    SpeedButton1: TSpeedButton;
     ShadowEffect1: TShadowEffect;
+    SpeedButton1: TSpeedButton;
     procedure SpeedButton1Click(Sender: TObject);
   private
     FClick: TProc<TObject>;
+    procedure Selecionar;
   public
     { Public declarations }
     function Build: TFMXObject;
@@ -58,6 +59,22 @@ begin
   FClick := Value;
 end;
 
+procedure TComponentCategory.Selecionar;
+begin
+  Rectangle1.Stroke.Kind := TBrushKind.Solid;
+  Rectangle1.Stroke.Color := TAlphaColor($FF0E9F68);
+  Image1.Bitmap.ReplaceOpaqueColor(TAlphaColor($FF0E9F68));
+  lblDescription.TextSettings.FontColor := TAlphaColor($FF0E9F68);
+end;
+
+procedure TComponentCategory.SpeedButton1Click(Sender: TObject);
+begin
+  if Assigned(FClick) then
+    FClick(Sender);
+
+  Selecionar;
+end;
+
 function TComponentCategory.Resources(Image, Description: string): TComponentCategory;
 begin
   Result := Self;
@@ -66,13 +83,7 @@ begin
 
   TUtils.ResourceImage(Image, Image1);
 
-  Image1.Bitmap.ReplaceOpaqueColor(TAlphaColor($FFB5b5b5));
-end;
-
-procedure TComponentCategory.SpeedButton1Click(Sender: TObject);
-begin
-  if Assigned(FClick) then
-    FClick(Sender);
+  Image1.Bitmap.ReplaceOpaqueColor(TAlphaColor($FFB5B5B5));
 end;
 
 end.

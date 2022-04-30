@@ -1,0 +1,99 @@
+unit posdesignDelphi.view.components.itemlist;
+
+interface
+
+uses
+  System.SysUtils,
+  System.Types,
+  System.UITypes,
+  System.Classes,
+  System.Variants,
+  FMX.Types,
+  FMX.Graphics,
+  FMX.Controls,
+  FMX.Forms,
+  FMX.Dialogs,
+  FMX.StdCtrls,
+  FMX.Controls.Presentation,
+  FMX.Layouts,
+  FMX.Objects;
+
+type
+  TComponentItemList = class(TFrame)
+    LayoutContainer: TLayout;
+    Layout1: TLayout;
+    Layout2: TLayout;
+    lblDescription: TLabel;
+    lblPrice: TLabel;
+    Layout3: TLayout;
+    Layout4: TLayout;
+    Layout5: TLayout;
+    lblQuantity: TLabel;
+    Image1: TImage;
+    SpeedButton1: TSpeedButton;
+    Image2: TImage;
+    SpeedButton2: TSpeedButton;
+    Image3: TImage;
+    SpeedButton3: TSpeedButton;
+    procedure SpeedButton3Click(Sender: TObject);
+    procedure SpeedButton1Click(Sender: TObject);
+    procedure SpeedButton2Click(Sender: TObject);
+  private
+    { Private declarations }
+    FClick: TProc<TObject>;
+    FUnitValue: currency;
+
+    procedure UpdatePrice(Value: currency);
+  public
+    { Public declarations }
+    function Build: TFMXObject;
+    function Click(Value: TProc<TObject>): TComponentItemList;
+    property UnitValue: currency read FUnitValue write FUnitValue;
+  end;
+
+implementation
+
+{$R *.fmx}
+{ TComponentItemList }
+
+function TComponentItemList.Build: TFMXObject;
+begin
+  Result := LayoutContainer;
+end;
+
+function TComponentItemList.Click(Value: TProc<TObject>): TComponentItemList;
+begin
+  Result := Self;
+  FClick := Value;
+end;
+
+procedure TComponentItemList.SpeedButton1Click(Sender: TObject);
+begin
+  if (StrToInt(lblQuantity.Text) > 0) and (StrToInt(lblQuantity.Text) <> 1) then
+  begin
+    lblQuantity.Text := IntToStr(StrToInt(lblQuantity.Text) - 1);
+    UpdatePrice(StrToCurr(lblQuantity.Text));
+  end;
+end;
+
+procedure TComponentItemList.SpeedButton2Click(Sender: TObject);
+begin
+  if (StrToInt(lblQuantity.Text) > 0) and (StrToInt(lblQuantity.Text) <> 1) then
+  begin
+    lblQuantity.Text := IntToStr(StrToInt(lblQuantity.Text) + 1);
+    UpdatePrice(StrToCurr(lblQuantity.Text));
+  end;
+end;
+
+procedure TComponentItemList.SpeedButton3Click(Sender: TObject);
+begin
+  if Assigned(FClick) then
+    FClick(Sender);
+end;
+
+procedure TComponentItemList.UpdatePrice(Value: currency);
+begin
+  lblPrice.Text := FormatCurr('R$ #,##0.00', (UnitValue + Value));
+end;
+
+end.
